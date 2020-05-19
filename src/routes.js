@@ -35,12 +35,32 @@ router.get('/contactworkbc', csrfProtection, (req, res) => {
     errors: {},
     csrfToken: req.csrfToken(),
     rurl: req.query.rurl,
+    fname: req.query.fname,
+    email: req.query.email,
+    centre: req.query.centre,
   });
 })
 
 router.post(
   "/contactworkbc", csrfProtection,
   [
+    check("firstname")
+    .notEmpty()
+    .withMessage("Please enter your first name."),
+    //do if to check number
+    check("phone")
+    .isMobilePhone(['en-CA', 'en-US'])
+    .optional()
+    .withMessage("Please enter a valid phone number."),
+    check("email")
+    .isEmail()
+    .withMessage("Please enter a valid email address.")
+    .bail()
+    .trim()
+    .normalizeEmail(),
+    check("consent")
+    .notEmpty()
+    .withMessage("You must agree before submitting."),
   ],
   (req, res) => {
     console.log(req.body);
