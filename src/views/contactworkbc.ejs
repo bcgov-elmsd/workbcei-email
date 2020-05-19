@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-lg-12">
+      <% if (messages.error) { %>
+      <div class="alert alert-danger"><%= messages.error %></div>
+      <% } %>
+      <h1 id="forms">Contact WorkBC Centre</h1>
+      <p><span style="color:red">*</span> Denotes a required field.</p>
+      <% if (Object.keys(errors).length === 0) { %>
+      <% } else { %>
+      <h3 class="errors-heading">Oops, please correct the following:</h3>
+      <ul class="errors-list">
+        <% Object.values(errors).forEach(error => { %>
+        <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post" action="/jobseeker" onsubmit="submitJobSeeker.disabled = true; return true;">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <div class="form-group">
+            <label class="col-form-label control-label" for="firstname">First Name <span
+                style="color:red">*</span></label>
+            <input type="text" class="form-control <%= errors.firstname ? 'is-invalid' : '' %>" id="firstname"
+              name="firstname" value="<%= data.firstname %>" />
+            <% if (errors.firstname) { %>
+            <div class="invalid-feedback">Please enter your name.</div>
+            <% } %>
+          </div>
+        <div class="form-group">
+          <label class="col-form-label control-label" for="phone">Phone</label>
+          <small class="text-muted" id="phone">555-555-5555 or 5551235555</small>
+          <input type="text" class="form-control <%= errors.phone ? 'is-invalid' : '' %>" id="phone" name="phone"
+            maxlength="12" aria-describedby="phone" value="<%= data.phone _%>" />
+          </input>
+          <% if (errors.phone) { %>
+          <div class="invalid-feedback"><%= errors.phone.msg %></div>
+          <% } %>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label control-label" for="email">Email <span style="color:red">*</span></label>
+          <small class="text-muted" id="email">someone@example.com</small>
+          <input type="text" class="form-control <%= errors.email ? 'is-invalid' : '' %>" id="email" aria-describedby="email" name="email"
+            value="<%= data.email %>" />
+          <% if (errors.email) { %>
+          <div class="invalid-feedback"><%= errors.email.msg %></div>
+          <% } %>
+        </div>
+        <!--
+        <div class="form-group">
+          <label class="col-form-label control-label" for="address">Address</label>
+          <small class="text-muted" id="address">555 Main St</small>
+          <input type="text" class="form-control <%= errors.address ? 'is-invalid' : '' %>" id="address" aria-describedby="address" name="address"
+            value="<%= data.address %>" />
+          <% if (errors.address) { %>
+          <div class="invalid-feedback"><%= errors.address.msg %></div>
+          <% } %>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label control-label" for="address2">Address 2</label>
+          <small id="address2" class="text-muted">Apartment, studio, or floor</small>
+          <input type="text" class="form-control <%= errors.address2 ? 'is-invalid' : '' %>" id="address2" aria-describedby="address2" name="address2"
+            value="<%= data.address2 %>" />
+          <% if (errors.address2) { %>
+          <div class="invalid-feedback"><%= errors.address2.msg %></div>
+          <% } %>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label class="col-form-label control-label" for="city">City <span style="color:red">*</span></label>
+            <input type="text" class="form-control <%= errors.city ? 'is-invalid' : '' %>" id="city" name="city"
+              value="<%= data.city %>" />
+            <% if (errors.city) { %>
+            <div class="invalid-feedback"><%= errors.city.msg %></div>
+            <% } %>
+          </div>
+          <div class="form-group col-md-4">
+            <label class="col-form-label control-label" for="postal">Postal Code <span style="color:red">*</span></label>
+            <input type="text" class="form-control <%= errors.postal ? 'is-invalid' : '' %>" id="postal" name="postal"
+              maxlength="7" value="<%= data.postal %>" />
+            <% if (errors.postal) { %>
+            <div class="invalid-feedback"><%= errors.postal.msg %></div>
+            <% } %>
+          </div>
+        </div>
+        -->
+        <div class="form-group">
+            <label class="col-form-label control-label" for="message">Message<span
+                style="color:red">*</span></label>
+            <textarea class="form-control <%= errors.message ? 'is-invalid' : '' %>"
+              id="message" name="message"
+              rows="6"><% console.log(data.message) %><% if (data.message) { %><%= data.message %><% } else { %>Something something<% } %></textarea>
+            <% if (errors.message) { %>
+            <div class="invalid-feedback"><%= errors.message.msg %></div>
+            <% } %>
+          </div>
+
+
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input <%= errors.consent ? 'is-invalid' : '' %>" id="consent"
+              name="consent" value="consent" />
+            <label class="form-check-label control-label" for="consent"><span style="color:red">*</span> I acknowledge and
+              understand that by clicking the "submit" icon, I am attaching my electronic signature to this form, and that
+              by doing so, I am providing the same consent as I would by manually signing a physical copy of this
+              form to be contacted by a WorkBC Centre.</label>
+            <% if (errors.consent) { %>
+            <div class="invalid-feedback"><%= errors.consent.msg %></div>
+            <% } %>
+          </div>
+        </div>
+        <!--
+          <div class="form-field <%= errors.email ? 'is-invalid' : '' %>">
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" value="<%= data.email %>" />
+          <% if (errors.email) { %>
+            <div class="invalid-feedback"><%= errors.email.msg %></div>
+          <% } %>
+        </div>-->
+        <div class="form-actions">
+          <!--<button class="btn btn-primary" id="submitJobSeeker" type="submit">Submit</button>-->
+        </div>
+    </div>
+    </form>
+  </div>
+  
+  <% 
+    function checkCertificates(s){
+      if (!data.certificates){
+        return false;
+      } else {
+        return data.certificates.includes(s);
+      }
+    }
+  %>

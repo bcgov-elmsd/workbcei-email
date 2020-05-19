@@ -2,6 +2,9 @@ const path = require("path");
 const express = require("express");
 const layout = require("express-layout");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const flash = require("express-flash");
 const helmet = require('helmet');
 
 
@@ -18,9 +21,19 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 
 
 const middlewares = [
+  helmet(),
   layout(),
   express.static(path.join(__dirname, "public")),
   bodyParser.urlencoded({ extended: true }),
+  cookieParser(),
+  session({
+    secret: process.env.SECRET || process.env.OPENSHIFT_NODEJS_SECRET ||"super-secret-key",
+    key: process.env.KEY || process.env.OPENSHIFT_NODEJS_KEY || "super-secret-cookie",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 60000 }
+  }),
+  flash()
 ];
 app.use(middlewares);
 
