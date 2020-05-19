@@ -88,11 +88,11 @@
         </div>
         -->
         <div class="form-group">
-            <label class="col-form-label control-label" for="message">Message<span
-                style="color:red">*</span></label>
+            <label class="col-form-label control-label" for="message">Message</label>
             <textarea class="form-control <%= errors.message ? 'is-invalid' : '' %>"
               id="message" name="message"
-              rows="6"><% console.log(data.message) %><% if (data.message) { %><%= data.message %><% } else { %>Something something<% } %></textarea>
+              rows="6"><% console.log(data.message) %><% if (data.message) { %><%= data.message %><% } else { %>Hello,
+I would like to apply for WorkBC.<% } %></textarea>
             <% if (errors.message) { %>
             <div class="invalid-feedback"><%= errors.message.msg %></div>
             <% } %>
