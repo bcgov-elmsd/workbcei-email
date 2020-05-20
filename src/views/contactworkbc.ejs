@@ -55,10 +55,10 @@
           <select aria-describedby="workbccentre" aria-required="true"
             class="form-control <%= errors.workbccentre ? 'is-invalid' : '' %>" id="workbccentre" name="workbccentre">
             <option value="0">(Please select)</option>
-            <option value="centre1" <%= checkworkbccentre('centre1') ? 'selected' : '' %>>Centre 1</option>
-            <option value="centre2" <%= checkworkbccentre('centre2') ? 'selected' : '' %>>Centre 2</option>
-            <option value="centre3" <%= checkworkbccentre('centre3') ? 'selected' : '' %>>Centre 3</option>
-            <option value="centre4" <%= checkworkbccentre('centre4') ? 'selected' : '' %>>Centre 4</option>
+            <option value="centre1" <%= checkworkbccentre('centre1') ? 'selected' : '' %>>Castlegar</option>
+            <option value="centre2" <%= checkworkbccentre('centre2') ? 'selected' : '' %>>Kitimat</option>
+            <option value="centre3" <%= checkworkbccentre('centre3') ? 'selected' : '' %>>Ashcroft</option>
+            <option value="centre4" <%= checkworkbccentre('centre4') ? 'selected' : '' %>>Chase</option>
           </select>
           <% if (errors.workbccentre) { %>
           <div class="invalid-feedback">Please select a centre to contact.</div>

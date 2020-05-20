@@ -11,19 +11,31 @@ const Strings = {};
 Strings.orEmpty = function (entity) {
   return entity || "";
 };
+Strings.orSlash = function(entity){
+  return entity || "/";
+}
 
 router.get('/', (req, res) => {
   res.render('index')
 });
 
+var centreredirect = {
+  centre1: "https://www.workbc.ca/WorkBC-Centres/Kootenay/Castlegar.aspx",
+  centre2: "https://www.workbc.ca/WorkBC-Centres/North-Coast-Nechako/Kitimat.aspx",
+  centre3: "https://www.workbc.ca/WorkBC-Centres/Thompson-Okanagan/Ashcroft.aspx",
+  centre4: "https://www.workbc.ca/WorkBC-Centres/Thompson-Okanagan/Chase.aspx"
+};
+
 router.get('/workbc', (req, res) => {
   console.log(req.params)
   console.log(req.query)
+  console.log(centreredirect[req.query.rurl])
+  var redirect = Strings.orSlash(centreredirect[req.query.rurl])
   res.render('workbccentre', {
     layout: 'redirect_layout',
     data: {},
     errors: {},
-    rurl: req.query.rurl,
+    rurl: redirect,
   });
 })
 
