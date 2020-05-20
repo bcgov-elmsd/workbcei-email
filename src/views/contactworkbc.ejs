@@ -19,13 +19,13 @@
   
   <div class="row">
     <div class="col-md-12">
-      <form method="post" action="/jobseeker" onsubmit="submitJobSeeker.disabled = true; return true;">
+      <form method="post" action="/contactworkbc" onsubmit="submitJobSeeker.disabled = true; return true;">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <div class="form-group">
             <label class="col-form-label control-label" for="firstname">First Name <span
                 style="color:red">*</span></label>
             <input type="text" class="form-control <%= errors.firstname ? 'is-invalid' : '' %>" id="firstname"
-              name="firstname" value="<%= data.firstname %>" />
+              name="firstname" value="<% if (data.firstname){ %><%= data.firstname _%> <% } else { %><%= fname _%><% } %>" />
             <% if (errors.firstname) { %>
             <div class="invalid-feedback">Please enter your name.</div>
             <% } %>
@@ -44,9 +44,24 @@
           <label class="col-form-label control-label" for="email">Email <span style="color:red">*</span></label>
           <small class="text-muted" id="email">someone@example.com</small>
           <input type="text" class="form-control <%= errors.email ? 'is-invalid' : '' %>" id="email" aria-describedby="email" name="email"
-            value="<%= data.email %>" />
+            value="<% if (data.email){ %><%= data.email _%> <% } else { %><%= email _%><%}%>" />
           <% if (errors.email) { %>
           <div class="invalid-feedback"><%= errors.email.msg %></div>
+          <% } %>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label control-label" for="workbccentre">WorkBC Centre</label>
+          <small id="workbccentre" class="text-muted">Please select the centre you would like to be contacted by.</small>
+          <select aria-describedby="workbccentre" aria-required="true"
+            class="form-control <%= errors.workbccentre ? 'is-invalid' : '' %>" id="workbccentre" name="workbccentre">
+            <option value="0">(Please select)</option>
+            <option value="centre1" <%= checkworkbccentre('centre1') ? 'selected' : '' %>>Centre 1</option>
+            <option value="centre2" <%= checkworkbccentre('centre2') ? 'selected' : '' %>>Centre 2</option>
+            <option value="centre3" <%= checkworkbccentre('centre3') ? 'selected' : '' %>>Centre 3</option>
+            <option value="centre4" <%= checkworkbccentre('centre4') ? 'selected' : '' %>>Centre 4</option>
+          </select>
+          <% if (errors.workbccentre) { %>
+          <div class="invalid-feedback">Please select a centre to contact.</div>
           <% } %>
         </div>
         <!--
@@ -91,7 +106,7 @@
             <label class="col-form-label control-label" for="message">Message</label>
             <textarea class="form-control <%= errors.message ? 'is-invalid' : '' %>"
               id="message" name="message"
-              rows="6"><% console.log(data.message) %><% if (data.message) { %><%= data.message %><% } else { %>Hello,
+              rows="6"><% if (data.message) { %><%= data.message %><% } else { %>Hello,
 I would like to apply for WorkBC.<% } %></textarea>
             <% if (errors.message) { %>
             <div class="invalid-feedback"><%= errors.message.msg %></div>
@@ -121,18 +136,22 @@ I would like to apply for WorkBC.<% } %></textarea>
           <% } %>
         </div>-->
         <div class="form-actions">
-          <!--<button class="btn btn-primary" id="submitJobSeeker" type="submit">Submit</button>-->
+          <!--<button class="btn btn-primary" id="submitContactWorkBC" type="submit">Submit</button>-->
         </div>
     </div>
     </form>
   </div>
   
   <% 
-    function checkCertificates(s){
-      if (!data.certificates){
+    function checkworkbccentre(s){
+      if (!data.workbccentre && !centre){
         return false;
+      } else if (typeof centre !== 'undefined'){
+        if (s == centre){
+          return true;
+        }
       } else {
-        return data.certificates.includes(s);
+        return data.workbccentre.includes(s);
       }
     }
   %>

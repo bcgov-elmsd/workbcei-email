@@ -47,10 +47,9 @@ router.post(
     check("firstname")
     .notEmpty()
     .withMessage("Please enter your first name."),
-    //do if to check number
     check("phone")
+    .optional({checkFalsy: true})
     .isMobilePhone(['en-CA', 'en-US'])
-    .optional()
     .withMessage("Please enter a valid phone number."),
     check("email")
     .isEmail()
@@ -58,6 +57,11 @@ router.post(
     .bail()
     .trim()
     .normalizeEmail(),
+    check("message")
+     .optional(),
+    check("workbccentre")
+    .not().isIn(['', '0'])
+    .withMessage("Please select a centre to contact."),
     check("consent")
     .notEmpty()
     .withMessage("You must agree before submitting."),
@@ -68,7 +72,7 @@ router.post(
     //console.log(errors);
     //const errors = [];
     if (!errors.isEmpty()) {
-      return res.render("jobseeker", {
+      return res.render("contactworkbc", {
         data: req.body,
         errors: errors.mapped(),
         csrfToken: req.csrfToken()
@@ -89,7 +93,7 @@ router.post(
       });
       let message = {
         from: 'WorkBC Referral <donotreply@gov.bc.ca>', // sender address
-        to: "WorkBC <WorkBCJobs@gov.bc.ca>", // list of receivers
+        to: "Test <ELMSD.Webmaster@gov.bc.ca>", // list of receivers
         subject: "Contact Me", // Subject line
         text: createPlainText(data), // plain text body
         html: createHtml(data) // html body
@@ -97,7 +101,7 @@ router.post(
       let info = transporter.sendMail(message, (error, info) => {
         if (error) {
           req.flash("error", "An error occured while submitting the form, please try again. If the error persists please try again later.");
-          return res.render("jobseeker", {
+          return res.render("contactworkbc", {
             data: req.body,
             errors: errors.mapped(),
             csrfToken: req.csrfToken()
@@ -105,7 +109,7 @@ router.post(
         } else {
           console.log("Message sent: %s", info.messageId);
           req.flash("success", "Form has been submitted");
-          res.redirect("/jobseekerdone");
+          res.redirect("/contactworkbcdone");
         }
       })
     } catch (error) {
