@@ -13,7 +13,7 @@ I wanted to let you know about WorkBC, a provincial government service that may 
 
 Let's start the conversation.
 
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test2&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test3&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 
