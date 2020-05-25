@@ -33,7 +33,7 @@
           <div class="form-group">
             <label class="col-form-label control-label" for="lastname">Last Name</label>
             <input type="text" class="form-control <%= errors.lastname ? 'is-invalid' : '' %>" id="lastname"
-              name="lastname" value="<% if (data.lastname){ %><%= data.lastname _%> <% } else { %><%= fname _%><% } %>" />
+              name="lastname"/>
             <% if (errors.lastname) { %>
             <div class="invalid-feedback">Please enter your name.</div>
             <% } %>
