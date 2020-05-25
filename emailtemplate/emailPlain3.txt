@@ -1,17 +1,21 @@
 [This email contains Plain Text only, for test purposes no HTML version of the email is included.]
-[CONTROL]
+[SET COMPLETION]
 
-I’m from WorkBC. How can we help?
+You’re one step away from valuable job resources!
 
 Dear {firstname},
 
-You're receiving this email because you recently applied to a federal program, such as the Canada Emergency Response Benefit (CERB) or Employment Insurance (EI). 
+You’re receiving this email because you recently applied to a federal program, such as the Canada Emergency Response Benefit (CERB) or Employment Insurance (EI). 
 
 Thank you for taking this first step. I recognize this may be a difficult time for you. 
 
 I wanted to let you know about WorkBC, a provincial government service that may also be helpful. We're here to assist-whether you want to improve your skills, explore career options, or find a job when the time is right.
 
-Let's start the conversation.
+Take one final step to job training and direct access to employers.
+
+☑ 1. Applied to EI
+☑ 2. Opened this email
+☐ 3. Connect with WorkBC
 
 Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test2&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
 Step 2: No further action is required. A team member will be in touch soon.

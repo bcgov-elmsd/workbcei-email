@@ -1,4 +1,7 @@
-[This email contains Plain Text only, for test purposes no HTML version of the email is included. Option 2]
+[This email contains Plain Text only, for test purposes no HTML version of the email is included.]
+[NORMS]
+
+Join 1000s of British Columbians accessing WorkBC services! 
 
 Dear {firstname},
 
@@ -6,24 +9,19 @@ You’re receiving this email because you recently applied to a federal program,
 
 Thank you for taking this first step. I recognize this may be a difficult time for you. 
 
-I wanted to let you know about WorkBC, a provincial government service that may also be helpful to you. We’re here to help—whether you want to improve your skills, explore career options, or find a job when the time is right.
+I wanted to let you know about WorkBC, a provincial government service that may also be helpful. We're here to assist-whether you want to improve your skills, explore career options, or find a job when the time is right.
 
-Let’s start the conversation.
+I invite you to join the thousands of British Columbians who are turning to WorkBC in these uncertain times. Every year, 20,000 people successfully get back into work after accessing our support.
 
-Step 1: Click here[1] to email your local WorkBC Centre 
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test2&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 
-• WorkBC staff are experts in navigating BC’s labour market. We’re ready to help you start planning your career options now so you’re ready after COVID-19.
-• We offer skills training and personalized, one-on-one job counselling. This can be expensive but through WorkBC counselling it’s completely free.
-• You might also be eligible for exclusive benefits.
-• Click here[2] to find out more about your local office
+• Expertise: We're ready to help you start career planning now or get you ready for the next phase of BC's COVID-19 Restart Plan.
+• Free Services: We offer skills training and personalized, one-on-one job counselling. This can be expensive but through WorkBC counselling it's completely free.
+• Benefits: You might also be eligible for exclusive benefits.
 
 Thank you.
 
 Sincerely,
-John Doe
-Some Title
-
-[1] {url}/workbc?pk_campaign=Email-Test1&pk_keyword=EmailCentre&pk_source=EmailPlain&rurl=mailto:someemail@gov.bc.ca
-[2] {url}/workbc?pk_campaign=Email-Test1&pk_keyword=CentreInfo&pk_source=EmailPlain&rurl=https://workbc.ca/
+Your WorkBC team
