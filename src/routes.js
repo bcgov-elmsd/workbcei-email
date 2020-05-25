@@ -40,8 +40,6 @@ router.get('/workbc', (req, res) => {
 })
 
 router.get('/contactworkbc', csrfProtection, (req, res) => {
-  console.log(req.params)
-  console.log(req.query)
   res.render('contactworkbc', {
     data: {},
     errors: {},
