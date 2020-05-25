@@ -30,6 +30,14 @@
             <div class="invalid-feedback">Please enter your name.</div>
             <% } %>
           </div>
+          <div class="form-group">
+            <label class="col-form-label control-label" for="lastname">Last Name</label>
+            <input type="text" class="form-control <%= errors.lastname ? 'is-invalid' : '' %>" id="lastname"
+              name="lastname" value="<% if (data.lastname){ %><%= data.lastname _%> <% } else { %><%= fname _%><% } %>" />
+            <% if (errors.lastname) { %>
+            <div class="invalid-feedback">Please enter your name.</div>
+            <% } %>
+          </div>
         <div class="form-group">
           <label class="col-form-label control-label" for="phone">Phone</label>
           <small class="text-muted" id="phone">555-555-5555 or 5551235555</small>
@@ -49,6 +57,7 @@
           <div class="invalid-feedback"><%= errors.email.msg %></div>
           <% } %>
         </div>
+        <!--
         <div class="form-group">
           <label class="col-form-label control-label" for="workbccentre">WorkBC Centre</label>
           <small id="workbccentre" class="text-muted">Please select the centre you would like to be contacted by.</small>
@@ -64,6 +73,7 @@
           <div class="invalid-feedback">Please select a centre to contact.</div>
           <% } %>
         </div>
+        -->
         <!--
         <div class="form-group">
           <label class="col-form-label control-label" for="address">Address</label>
