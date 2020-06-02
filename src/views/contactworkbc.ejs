@@ -35,7 +35,7 @@
             <input type="text" class="form-control <%= errors.lastname ? 'is-invalid' : '' %>" id="lastname"
               name="lastname"/>
             <% if (errors.lastname) { %>
-            <div class="invalid-feedback">Please enter your name.</div>
+            <div class="invalid-feedback">Please enter your last name.</div>
             <% } %>
           </div>
         <div class="form-group">
@@ -146,7 +146,7 @@ I would like to apply for WorkBC.<% } %></textarea>
           <% } %>
         </div>-->
         <div class="form-actions">
-          <!--<button class="btn btn-primary" id="submitContactWorkBC" type="submit">Submit</button>-->
+          <button class="btn btn-primary" id="submitContactWorkBC" type="submit" onclick="_paq.push(['trackEvent', 'ContactForm', 'Submit']);">Submit</button>
         </div>
     </div>
     </form>

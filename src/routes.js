@@ -39,6 +39,10 @@ router.get('/workbc', (req, res) => {
   });
 })
 
+router.get('/contactworkbcdone', (req,res)=>{
+  res.render('contactworkbcdone')
+})
+
 router.get('/contactworkbc', csrfProtection, (req, res) => {
   res.render('contactworkbc', {
     data: {},
@@ -57,6 +61,8 @@ router.post(
     check("firstname")
     .notEmpty()
     .withMessage("Please enter your first name."),
+    check("lastname")
+    .optional(),
     check("phone")
     .optional({checkFalsy: true})
     .isMobilePhone(['en-CA', 'en-US'])
@@ -91,7 +97,7 @@ router.post(
 
     const data = matchedData(req);
     console.log("Sanitized: ", data);
-    
+    /*
     try {
       let transporter = nodemailer.createTransport({
         host: "apps.smtp.gov.bc.ca",
@@ -125,11 +131,12 @@ router.post(
     } catch (error) {
 
     }
+    */
         
     
     //sendMail(data);
-    //req.flash("success", "Form has been submitted");
-    //res.redirect("/done");
+    req.flash("success", "Form has been submitted");
+    res.redirect("/contactworkbcdone");
 
   }
 );
