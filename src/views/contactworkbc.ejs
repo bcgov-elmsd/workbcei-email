@@ -31,9 +31,10 @@
             <% } %>
           </div>
           <div class="form-group">
-            <label class="col-form-label control-label" for="lastname">Last Name</label>
+            <label class="col-form-label control-label" for="lastname">Last Name <span
+              style="color:red">*</span></label>
             <input type="text" class="form-control <%= errors.lastname ? 'is-invalid' : '' %>" id="lastname"
-              name="lastname"/>
+              name="lastname" value="<% if (data.lastname){ %><%= data.lastname _%> <% } else { %><%= lname _%><% } %>"/>
             <% if (errors.lastname) { %>
             <div class="invalid-feedback">Please enter your last name.</div>
             <% } %>
@@ -117,7 +118,8 @@
             <textarea class="form-control <%= errors.message ? 'is-invalid' : '' %>"
               id="message" name="message"
               rows="6"><% if (data.message) { %><%= data.message %><% } else { %>Hello,
-I would like to apply for WorkBC.<% } %></textarea>
+I would like to receive more information on the services and trainings offered by WorkBC.
+Thank you<% } %></textarea>
             <% if (errors.message) { %>
             <div class="invalid-feedback"><%= errors.message.msg %></div>
             <% } %>
