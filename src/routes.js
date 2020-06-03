@@ -159,8 +159,9 @@ function createEmailContactHtml(data) {
   html += "<p>Email: " + data.email + "</p>"
   html += "<p>Phone: " + Strings.orEmpty(data.phone) + "</p>"
   html += "<p>Message:</p>"
-  html += "<p>" + Strings.orEmpty(data.message) + "</p>"
+  html += "<p>" + Strings.orEmpty(data.message) + "</p><br>"
 
+  html += "<p>This referral came from an online form created by the Ministry. For more information on this referral process contact please contact your CAPA.</p>"
 
   return html;
 
@@ -175,7 +176,9 @@ function createEmailContactPlainText(data) {
   plain += "Email: " + data.email + "\n"
   plain += "Phone: " + Strings.orEmpty(data.phone) + "\n"
   plain += "Message:\n"
-  plain += Strings.orEmpty(data.message) + "\n"
+  plain += Strings.orEmpty(data.message) + "\n\n"
+
+  plain += "This referral came from an online form created by the Ministry. For more information on this referral process contact please contact your CAPA."
 
   return plain;
 }
