@@ -15,6 +15,10 @@ Strings.orSlash = function(entity){
   return entity || "/";
 }
 
+Strings.orSpace = function(entity){
+  return entity || " ";
+}
+
 router.get('/', (req, res) => {
   res.render('index')
 });
@@ -44,15 +48,21 @@ router.get('/contactworkbcdone', (req,res)=>{
 })
 
 router.get('/contactworkbc', csrfProtection, (req, res) => {
+  var fname = Strings.orEmpty(req.query.fname);
+  var lname = Strings.orEmpty(req.query.lname);
+  var email = Strings.orEmpty(req.query.email);
+  var centre = Strings.orEmpty(req.query.centre);
   res.render('contactworkbc', {
     data: {},
     errors: {},
     csrfToken: req.csrfToken(),
-    rurl: req.query.rurl,
-    fname: req.query.fname,
-    email: req.query.email,
-    centre: req.query.centre,
+    //rurl: req.query.rurl,
+    fname: fname,
+    lname: lname,
+    email: email,
+    centre: centre,
   });
+  console.log(fname);
 })
 
 router.post(
@@ -60,9 +70,12 @@ router.post(
   [
     check("firstname")
     .notEmpty()
+    .trim()
     .withMessage("Please enter your first name."),
     check("lastname")
-    .optional(),
+    .notEmpty()
+    .trim()
+    .withMessage("Please enter your last name."),
     check("phone")
     .optional({checkFalsy: true})
     .isMobilePhone(['en-CA', 'en-US'])
@@ -97,7 +110,7 @@ router.post(
 
     const data = matchedData(req);
     console.log("Sanitized: ", data);
-    /*
+    
     try {
       let transporter = nodemailer.createTransport({
         host: "apps.smtp.gov.bc.ca",
@@ -108,11 +121,11 @@ router.post(
         }
       });
       let message = {
-        from: 'WorkBC Referral <donotreply@gov.bc.ca>', // sender address
+        from: 'TRF Referral <donotreply@gov.bc.ca>', // sender address
         to: "Test <ELMSD.Webmaster@gov.bc.ca>", // list of receivers
-        subject: "Contact Me", // Subject line
-        text: createPlainText(data), // plain text body
-        html: createHtml(data) // html body
+        subject: "New TRF Referral - " + data.firstname + " " + data.firstname, // Subject line
+        text: createEmailContactPlainText(data), // plain text body
+        html: createEmailContactHtml(data) // html body
       }
       let info = transporter.sendMail(message, (error, info) => {
         if (error) {
@@ -131,24 +144,41 @@ router.post(
     } catch (error) {
 
     }
-    */
-        
-    
-    //sendMail(data);
-    req.flash("success", "Form has been submitted");
-    res.redirect("/contactworkbcdone");
 
   }
 );
 
 
+function createEmailContactHtml(data) {
+  var html = "";
+  //html += "<p>Salutation: " + data.salutation + ".</p>"
+  html += "<p>Hello,</p>"
+  html += "<p>You have received a new TRF referral – see details below. Please aim to make contact with the individual as soon as possible.</p>"
+  html += "<p>First Name: " + data.firstname + "</p>"
+  html += "<p>Last Name: " + data.lastname + "</p>"
+  html += "<p>Email: " + data.email + "</p>"
+  html += "<p>Phone: " + Strings.orEmpty(data.phone) + "</p>"
+  html += "<p>Message:</p>"
+  html += "<p>" + Strings.orEmpty(data.message) + "</p>"
 
-/*
-router.get('/about', (req, res) => {
-  res.render('about')
-});
-*/
 
+  return html;
+
+}
+
+function createEmailContactPlainText(data) {
+  var plain = "";
+  plain += "Hello, \n"
+  plain += "You have received a new TRF referral – see details below. Please aim to make contact with the individual as soon as possible.\n"
+  plain += "First Name: " + data.firstname + "\n"
+  plain += "Last Name: " + data.lastname + "\n"
+  plain += "Email: " + data.email + "\n"
+  plain += "Phone: " + Strings.orEmpty(data.phone) + "\n"
+  plain += "Message:\n"
+  plain += Strings.orEmpty(data.message) + "\n"
+
+  return plain;
+}
 
 
 
