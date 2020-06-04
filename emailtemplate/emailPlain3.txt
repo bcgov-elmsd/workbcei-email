@@ -17,7 +17,7 @@ Take one final step to job training and direct access to employers.
 ☑ 2. Opened this email
 ☐ 3. Connect with WorkBC
 
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test3&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 

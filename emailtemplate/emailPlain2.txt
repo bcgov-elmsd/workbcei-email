@@ -13,7 +13,7 @@ I wanted to let you know about WorkBC, a provincial government service that may 
 
 I invite you to join the thousands of British Columbians who are turning to WorkBC in these uncertain times. Every year, 20,000 people successfully get back into work after accessing our support.
 
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign=Email-Test3&pk_keyword=EmailCentre&pk_source=Email&fname={firstname}&email={contactemail}&centre={workbccentre}
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 
