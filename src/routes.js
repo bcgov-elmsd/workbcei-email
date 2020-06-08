@@ -30,6 +30,56 @@ var centreredirect = {
   centre4: "https://www.workbc.ca/WorkBC-Centres/Thompson-Okanagan/Chase.aspx"
 };
 
+//defaults to SF1 for now
+var ca = [
+ "", //0
+ "centre-campbellriver@workbc.ca", //1
+ "centre-courtenay@workbc.ca", //2
+ "centre-portalberni@workbc.ca", //3
+ "centre-nanaimo@workbc.ca", //4
+ "centre-duncan@workbc.ca", //5
+ "centre-langford@workbc.ca", //6
+ "centre-victoria-douglas@workbc.ca", //7
+ "centre-sidney@workbc.ca", //8
+ "centre-sechelt@workbc.ca", //9
+ "centre-northvancouver@workbc.ca", //10
+ "centre-vancouver-134easthastings@workbc.ca", //11
+ "centre-vancouver-east3rd@workbc.ca", //12
+ "centre-vancouver-commercial@workbc.ca", //13
+ "centre-vancouversouth@workbc.ca", //14
+ "centre-richmond-no5@workbc.ca", //15
+ "centre-mapleridge@workbc.ca", //16
+ "centre-portmoody@workbc.ca", //17
+ "centre-delta-88th@workbc.ca", //18
+ "centre-surreyguildford@workbc.ca", //19
+ "centre-surrey-56@workbc.ca", //20
+ "centre-surreynewton@workbc.ca", //21
+ "centre-surrey-152@workbc.ca", //22
+ "centre-langley-willowbrook@workbc.ca", //23
+ "centre-burnaby-4211kingsway@workbc.ca", //24
+ "centre-newwestminster@workbc.ca", //25
+ "centre-mission@workbc.ca", //26
+ "centre-abbotsford@workbc.ca", //27
+ "centre-chilliwack@workbc.ca", //28
+ "centre-quesnel@workbc.ca", //29
+ "centre-merritt@workbc.ca", //30
+ "centre-kamloops-lansdowne@workbc.ca", //31
+ "centre-penticton@workbc.ca", //32
+ "centre-kelowna@workbc.ca", //33
+ "centre-salmonarm@workbc.ca", //34
+ "centre-trail@workbc.ca", //35
+ "centre-creston@workbc.ca", //36
+ "centre-fernie@workbc.ca", //37
+ "centre-vernon@workbc.ca", //38
+ "centre-princerupert@workbc.ca", //39
+ "centre-terrace@workbc.ca", //40
+ "centre-smithers@workbc.ca", //41
+ "centre-vanderhoof@workbc.ca", //42
+ "centre-valemount@workbc.ca", //43
+ "centre-fortstjohn@workbc.ca", //44
+ "centre-dawsoncreek@workbc.ca", //45
+];
+
 router.get('/workbc', (req, res) => {
   console.log(req.params)
   console.log(req.query)
