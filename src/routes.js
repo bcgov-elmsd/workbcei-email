@@ -33,6 +33,12 @@ var centreredirect = {
 //defaults to SF1 for now
 var ca = [
  "", //0
+// Test ones for 1 to 4
+ "ELMSD.Webmaster@gov.bc.ca", //1 
+ "Rafael.Solorzano@gov.bc.ca", //2
+ "WorkBCJobs@gov.bc.ca", //3 
+ "WorkBCHiring@gov.bc.ca", //4
+/*
  "centre-campbellriver@workbc.ca", //1
  "centre-courtenay@workbc.ca", //2
  "centre-portalberni@workbc.ca", //3
@@ -78,12 +84,14 @@ var ca = [
  "centre-valemount@workbc.ca", //43
  "centre-fortstjohn@workbc.ca", //44
  "centre-dawsoncreek@workbc.ca", //45
+ */
 ];
 
+//Not used, might need in future
 router.get('/workbc', (req, res) => {
-  console.log(req.params)
-  console.log(req.query)
-  console.log(centreredirect[req.query.rurl])
+  //console.log(req.params)
+  //console.log(req.query)
+  //console.log(centreredirect[req.query.rurl])
   var redirect = Strings.orSlash(centreredirect[req.query.rurl])
   res.render('workbccentre', {
     layout: 'redirect_layout',
@@ -172,7 +180,7 @@ router.post(
       });
       let message = {
         from: 'TRF Referral <donotreply@gov.bc.ca>', // sender address
-        to: "Test <ELMSD.Webmaster@gov.bc.ca>", // list of receivers
+        to: "Test <" + ca[centre] + ">", // list of receivers
         subject: "New TRF Referral - " + data.firstname + " " + data.lastname, // Subject line
         text: createEmailContactPlainText(data), // plain text body
         html: createEmailContactHtml(data) // html body
