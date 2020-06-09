@@ -20,7 +20,9 @@ Strings.orSpace = function(entity){
 }
 
 router.get('/', (req, res) => {
-  res.render('index')
+  res.render('index',{
+    layout: 'layoutnotrack',
+  });
 });
 
 var centreredirect = {
@@ -110,6 +112,7 @@ router.get('/contactworkbc', csrfProtection, (req, res) => {
   var lname = Strings.orEmpty(req.query.lname);
   var email = Strings.orEmpty(req.query.email);
   var centre = Strings.orEmpty(req.query.centre);
+  var uid = Strings.orEmpty(req.query.uid);
   res.render('contactworkbc', {
     data: {},
     errors: {},
@@ -119,8 +122,9 @@ router.get('/contactworkbc', csrfProtection, (req, res) => {
     lname: lname,
     email: email,
     centre: centre,
+    uid: uid,
   });
-  console.log(fname);
+  console.log(uid);
 })
 
 router.post(
@@ -161,6 +165,11 @@ router.post(
     if (!errors.isEmpty()) {
       return res.render("contactworkbc", {
         data: req.body,
+        fname: req.body.firstname,
+        lname: req.body.lastname,
+        email: req.body.email,
+        centre: req.body.centre,
+        uid: req.body._uid,
         errors: errors.mapped(),
         csrfToken: req.csrfToken()
       });
@@ -190,11 +199,17 @@ router.post(
           req.flash("error", "An error occured while submitting the form, please try again. If the error persists please try again later.");
           return res.render("contactworkbc", {
             data: req.body,
+            fname: req.body.firstname,
+            lname: req.body.lastname,
+            email: req.body.email,
+            centre: req.body.centre,
+            uid: req.body._uid,
             errors: errors.mapped(),
             csrfToken: req.csrfToken()
           });
         } else {
           console.log("Message sent: %s", info.messageId);
+          req.flash("uid",data._uid)
           req.flash("success", "Form has been submitted");
           res.redirect("/contactworkbcdone");
         }
@@ -208,6 +223,7 @@ router.post(
 
 
 function createEmailContactHtml(data) {
+  console.log(data.message);
   var html = "";
   //html += "<p>Salutation: " + data.salutation + ".</p>"
   html += "<p>Hello,</p>"
