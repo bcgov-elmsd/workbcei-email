@@ -189,11 +189,12 @@ router.post(
       });
       let message = {
         from: 'TRF Referral <donotreply@gov.bc.ca>', // sender address
-        to: "Test <" + ca[centre] + ">", // list of receivers
+        to: "Test <ELMSD.Webmaster@gov.bc.ca>", // list of receivers
         subject: "New TRF Referral - " + data.firstname + " " + data.lastname, // Subject line
         text: createEmailContactPlainText(data), // plain text body
         html: createEmailContactHtml(data) // html body
       }
+      console.log(message);
       let info = transporter.sendMail(message, (error, info) => {
         if (error) {
           req.flash("error", "An error occured while submitting the form, please try again. If the error persists please try again later.");
@@ -215,7 +216,7 @@ router.post(
         }
       })
     } catch (error) {
-
+      console.log(error);
     }
 
   }
