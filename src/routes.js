@@ -189,7 +189,7 @@ router.post(
       });
       let message = {
         from: 'TRF Referral <donotreply@gov.bc.ca>', // sender address
-        to: "Test <ELMSD.Webmaster@gov.bc.ca>", // list of receivers
+        to: "Test <" + ca[data.workbccentre] + ">", // list of receivers
         subject: "New TRF Referral - " + data.firstname + " " + data.lastname, // Subject line
         text: createEmailContactPlainText(data), // plain text body
         html: createEmailContactHtml(data) // html body
