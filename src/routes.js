@@ -124,7 +124,6 @@ router.get('/contactworkbc', csrfProtection, (req, res) => {
     centre: centre,
     uid: uid,
   });
-  console.log(uid);
 })
 
 router.post(
@@ -194,7 +193,6 @@ router.post(
         text: createEmailContactPlainText(data), // plain text body
         html: createEmailContactHtml(data) // html body
       }
-      console.log(message);
       let info = transporter.sendMail(message, (error, info) => {
         if (error) {
           req.flash("error", "An error occured while submitting the form, please try again. If the error persists please try again later.");
@@ -224,7 +222,6 @@ router.post(
 
 
 function createEmailContactHtml(data) {
-  console.log(data.message);
   var html = "";
   //html += "<p>Salutation: " + data.salutation + ".</p>"
   html += "<p>Hello,</p>"
