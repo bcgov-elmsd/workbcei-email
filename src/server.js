@@ -21,7 +21,16 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     redishost = process.env.REDIS_HOST || process.env.OPENSHIFT_REDIS_HOST || "127.0.0.1"
     redispass = process.env.REDIS_PASS || process.env.OPENSHIFT_REDIS_PASS || "";
 
-const redisClient = redis.createClient({host: redishost, port: redisport, password: redispass});
+var client = {
+  host: redishost,
+  port: redisport
+}
+if (redispass != ""){
+  client.password = redispass;
+}
+
+const redisClient = redis.createClient(client);
+
 
 redisClient.on("error", function(error) {
   console.error(error);

@@ -14,6 +14,8 @@
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     <% if (typeof(uid) !== "undefined") { %>
       _paq.push(['setUserId', '<%= uid %>']);
+    <% } else if (messages.uid) { %>
+      _paq.push(['setUserId', '<%= messages.uid %>']);
     <% } %>
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);

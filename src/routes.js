@@ -157,7 +157,7 @@ router.post(
     .withMessage("You must agree before submitting."),
   ],
   (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     const errors = validationResult(req);
     //console.log(errors);
     //const errors = [];
@@ -208,7 +208,7 @@ router.post(
           });
         } else {
           console.log("Message sent: %s", info.messageId);
-          req.flash("uid",data._uid)
+          req.flash("uid",req.body._uid)
           req.flash("success", "Form has been submitted");
           res.redirect("/contactworkbcdone");
         }
