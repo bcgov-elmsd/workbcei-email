@@ -1,7 +1,7 @@
 [This email contains Plain Text only, for test purposes no HTML version of the email is included.]
-[SET COMPLETION]
+[CONTROL]
 
-You’re one step away from valuable job resources!
+I’m from WorkBC. How can we help?
 
 Dear {firstname},
 
@@ -11,13 +11,9 @@ Thank you for taking this first step. I recognize this may be a difficult time f
 
 I wanted to let you know about WorkBC, a provincial government service that may also be helpful. We're here to assist-whether you want to improve your skills, explore career options, or find a job when the time is right.
 
-Take one final step to job training and direct access to employers.
+Let's start the conversation.
 
-☑ 1. Applied to EI
-☑ 2. Opened this email
-☐ 3. Connect with WorkBC
-
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email-test.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 

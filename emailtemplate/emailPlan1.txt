@@ -5,7 +5,7 @@ I’m from WorkBC. How can we help?
 
 Dear {firstname},
 
-You're receiving this email because you recently applied to a federal program, such as the Canada Emergency Response Benefit (CERB) or Employment Insurance (EI). 
+You're receiving this email because you recently applied to Employment Insurance (EI).
 
 Thank you for taking this first step. I recognize this may be a difficult time for you. 
 
@@ -13,7 +13,7 @@ I wanted to let you know about WorkBC, a provincial government service that may 
 
 Let's start the conversation.
 
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}
+Step 1: Click here to email your local WorkBC Centre: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
 Step 2: No further action is required. A team member will be in touch soon.
 
 Why use WorkBC? 
