@@ -3,9 +3,9 @@
 
 You’re one step away from valuable job resources!
 
-Dear {firstname},
+Hello {firstname},
 
-You're receiving this email because you recently applied to Employment Insurance (EI).
+You're receiving this email because you recently applied for a federal benefit program that provides employment supports, such as Employment Insurance (EI).
 
 Thank you for taking this first step. I recognize this may be a difficult time for you. 
 
@@ -13,12 +13,9 @@ I wanted to let you know about WorkBC, a provincial government service that may 
 
 Take one final step to job training and direct access to employers.
 
-☑ 1. Applied to EI
+☑ 1. Applied to federal benefits
 ☑ 2. Opened this email
-☐ 3. Connect with WorkBC
-
-Step 1: Click here to email your local WorkBC Centre: https://workbcei-email-test.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}
-Step 2: No further action is required. A team member will be in touch soon.
+☐ 3. CLICK HERE to contact your local WorkBC Centre. A team member will be in touch soon: https://workbcei-email-test.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
 
 Why use WorkBC? 
 • Expertise: We're ready to help you start career planning now or get you ready for the next phase of BC's COVID-19 Restart Plan.
