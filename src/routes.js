@@ -104,7 +104,9 @@ router.get('/workbc', (req, res) => {
 })
 
 router.get('/contactworkbcdone', (req,res)=>{
-  res.render('contactworkbcdone')
+  res.render('contactworkbcdone',{
+    layout: 'layout_thankyou'
+  });
 })
 
 router.get('/contactworkbc', csrfProtection, (req, res) => {
