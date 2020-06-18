@@ -15,7 +15,7 @@ Take one final step to access job training and direct links to employers.
 
 ☑ 1. Applied to federal benefits
 ☑ 2. Opened this email
-☐ 3. CLICK HERE to contact your local WorkBC Centre. A team member will be in touch soon: https://workbcei-email-test.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
+□ 3. CLICK HERE to contact your local WorkBC Centre. A team member will be in touch soon: https://workbcei-email-test.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
 
 Why use WorkBC? 
 • Expertise: We're ready to help you start career planning now or get you ready for the next phase of BC's COVID-19 Restart Plan.
