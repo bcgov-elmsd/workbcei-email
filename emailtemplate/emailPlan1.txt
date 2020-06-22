@@ -1,6 +1,3 @@
-[This email contains Plain Text only, for test purposes no HTML version of the email is included.]
-[CONTROL]
-
 I’m from WorkBC. How can we help?
 
 Hello {firstname},
