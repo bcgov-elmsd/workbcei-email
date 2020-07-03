@@ -95,7 +95,7 @@ router.get('/workbc', (req, res) => {
   //console.log(req.query)
   //console.log(centreredirect[req.query.rurl])
   var uid = Strings.orEmpty(req.query.uid);
-  var redirect = ""
+  var redirect = "https://www.workbc.ca/Employment-Services/WorkBC-Centres.aspx"
   res.render('workbccentre', {
     layout: 'redirect_layout',
     data: {},
