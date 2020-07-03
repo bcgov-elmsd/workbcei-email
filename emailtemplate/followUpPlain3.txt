@@ -1,0 +1,19 @@
+[This email contains Plain Text only, for test purposes no HTML version of the email is included.]
+[SET COMPLETION]
+
+You're only one click away from job training and support
+
+Hello {firstname},
+
+Two weeks ago, we emailed to let you know about WorkBC. We're a free provincial government service that offers support to people looking for work.
+
+Take one final step to access job training and direct links to employers.
+
+☑ 1. Applied to federal benefits
+☑ 2. Opened this email
+□ 3. CLICK HERE to contact your local WorkBC Centre. A team member will be in touch soon: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
+
+Our team will be in touch. If it's not right for you, there's no obligation to enrol.
+
+Sincerely,
+Your WorkBC team
