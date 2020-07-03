@@ -94,12 +94,14 @@ router.get('/workbc', (req, res) => {
   //console.log(req.params)
   //console.log(req.query)
   //console.log(centreredirect[req.query.rurl])
-  var redirect = Strings.orSlash(centreredirect[req.query.rurl])
+  var uid = Strings.orEmpty(req.query.uid);
+  var redirect = "https://www.workbc.ca/Employment-Services/WorkBC-Centres.aspx"
   res.render('workbccentre', {
     layout: 'redirect_layout',
     data: {},
     errors: {},
     rurl: redirect,
+    uid: uid,
   });
 })
 
@@ -169,7 +171,7 @@ router.post(
         fname: req.body.firstname,
         lname: req.body.lastname,
         email: req.body.email,
-        centre: req.body.centre,
+        centre: req.body.workbccentre,
         uid: req.body._uid,
         errors: errors.mapped(),
         csrfToken: req.csrfToken()
