@@ -171,7 +171,7 @@ router.post(
         fname: req.body.firstname,
         lname: req.body.lastname,
         email: req.body.email,
-        centre: req.body.centre,
+        centre: req.body.workbccentre,
         uid: req.body._uid,
         errors: errors.mapped(),
         csrfToken: req.csrfToken()
