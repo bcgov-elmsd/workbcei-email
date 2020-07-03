@@ -2,7 +2,7 @@
 
 You're only one click away from job training and support
 
-Hello {firstname},
+Hi {firstname},
 
 Two weeks ago, we emailed to let you know about WorkBC. We're a free provincial government service that offers support to people looking for work.
 
