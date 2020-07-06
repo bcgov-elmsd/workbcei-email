@@ -1,0 +1,15 @@
+[This email contains Plain Text only, for test purposes no HTML version of the email is included.]
+
+Every day more and more British Columbians are accessing our support!
+
+Hi {firstname},
+
+Two weeks ago, we emailed to let you know about WorkBC. We're a free provincial government service that offers support to people looking for work.
+
+Every year, 20,000 people successfully get back into work after accessing our support. Join them.
+
+CLICK HERE to contact your local WorkBC Centre.: https://workbcei-email.pathfinder.gov.bc.ca/contactworkbc?pk_campaign={campaign}&pk_source=Email&fname={firstname}&lname={lastname}&email={contactemail}&centre={workbccentre}&uid={referral_wid}
+Our team will be in touch. If it's not right for you, there's no obligation to enrol.
+
+Sincerely,
+Your WorkBC team
